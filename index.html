@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>As Seen On | YVZ Denim</title>
+    <title>Wie gesehen an | YVZ Denim</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
         
@@ -61,11 +61,12 @@
             background: #fff; 
             overflow: hidden; 
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .card:hover { 
             transform: translateY(-8px); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
         .card-image {
@@ -125,7 +126,7 @@
         .btn { 
             display: inline-block; 
             padding: 12px 24px; 
-            background: #1a1a1a; 
+            background: #2980b9; 
             color: #fff; 
             text-decoration: none; 
             font-size: 0.85rem; 
@@ -133,21 +134,24 @@
             text-transform: uppercase;
             font-weight: 500;
             transition: all 0.3s ease;
-            border: 1px solid #1a1a1a;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
         }
         
         .btn:hover { 
-            background: #333; 
-            border-color: #333;
+            background: #3498db; 
+            transform: translateY(-2px);
         }
         
         .btn.outline {
             background: transparent;
-            color: #1a1a1a;
+            color: #2980b9;
+            border: 1px solid #2980b9;
         }
         
         .btn.outline:hover {
-            background: #1a1a1a;
+            background: #2980b9;
             color: #fff;
         }
         
@@ -185,7 +189,7 @@
 <header>
     <h1>YVZ Denim</h1>
     <div class="divider"></div>
-    <p>As Seen On – Celebrity Collection</p>
+    <p>Wie gesehen an – Unsere Prominenten-Kollektion</p>
 </header>
 
 <main class="container">
@@ -193,14 +197,14 @@
         <!-- Card 1: NE-YO -->
         <div class="card">
             <div class="card-image">
-                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/neyo.jpg" alt="NE-YO wearing YVZ Denim">
+                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/neyo.jpg" alt="NE-YO trägt YVZ Denim">
             </div>
             <div class="card-content">
                 <h3>NE-YO</h3>
-                <div class="role">Grammy-Winning R&B Artist</div>
-                <p>Seen during his tour wearing the sophisticated Mira Blazer, proving that YVZ Denim fits perfectly on stage and beyond.</p>
+                <div class="role">Grammy-prämierter R&B-Künstler</div>
+                <p>Während seiner Tour in dem eleganten Mira Blazer zu sehen – YVZ Denim passt perfekt auf der Bühne und darüber hinaus.</p>
                 <div class="btn-group">
-                    <a href="https://yvzdenim.com/products/mira-blazer?tag=" class="btn">Mira Blazer</a>
+                    <a href="https://yvzdenim.com/products/mira-blazer?tag=" class="btn">Mira Blazer ansehen</a>
                 </div>
             </div>
         </div>
@@ -208,12 +212,12 @@
         <!-- Card 2: Sarah Engels -->
         <div class="card">
             <div class="card-image">
-                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/sarah-engels.jpg" alt="Sarah Engels in YVZ Denim">
+                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/sarah-engels.jpg" alt="Sarah Engels trägt YVZ Denim">
             </div>
             <div class="card-content">
                 <h3>Sarah Engels</h3>
-                <div class="role">Singer & Television Personality</div>
-                <p>Stunning in our Trenchcoat Orion Brown. Sarah shows how to combine elegance with the rugged charm of premium denim.</p>
+                <div class="role">Sängerin & Fernsehpersönlichkeit</div>
+                <p>In unserem Trenchcoat Orion Brown zu sehen. Sarah zeigt, wie man Eleganz mit dem robusten Charme von Premium-Denim verbindet.</p>
                 <div class="btn-group">
                     <a href="https://yvzdenim.com/products/trenchcoat-orion-brown?tag=Women" class="btn">Trenchcoat Orion Brown</a>
                 </div>
@@ -223,15 +227,15 @@
         <!-- Card 3: Matze Knop -->
         <div class="card">
             <div class="card-image">
-                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/matze-knop.jpg" alt="Matze Knop in YVZ Denim">
+                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/matze-knop.jpg" alt="Matze Knop trägt YVZ Denim">
             </div>
             <div class="card-content">
                 <h3>Matze Knop</h3>
-                <div class="role">Comedian & Actor</div>
-                <p>Matze rocks the Cassiopeia Jacket & Pants. A look that transitions seamlessly from a TV set to a night out in Berlin.</p>
+                <div class="role">Komiker & Schauspieler</div>
+                <p>Matze trägt die Cassiopeia Jacke & Hose. Ein Look, der nahtlos vom TV-Set zu einem Abend in Berlin wechselt.</p>
                 <div class="btn-group">
-                    <a href="https://yvzdenim.com/products/cassiopeia-jacket-blue?tag=Men" class="btn">Jacket</a>
-                    <a href="https://yvzdenim.com/products/cassiopeia-pants-blue?tag=Men" class="btn outline">Pants</a>
+                    <a href="https://yvzdenim.com/products/cassiopeia-jacket-blue?tag=Men" class="btn">Jacke</a>
+                    <a href="https://yvzdenim.com/products/cassiopeia-pants-blue?tag=Men" class="btn outline">Hose</a>
                 </div>
             </div>
         </div>
@@ -239,15 +243,15 @@
         <!-- Card 4: DSDS Top 10 -->
         <div class="card">
             <div class="card-image">
-                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/dsds-candidate.jpg" alt="DSDS Candidate in YVZ Denim">
+                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/dsds-candidate.jpg" alt="DSDS Kandidat trägt YVZ Denim">
             </div>
             <div class="card-content">
-                <h3>DSDS Top 10</h3>
-                <div class="role">Rising Star</div>
-                <p>The Mira Jacket & Mira Pants were the outfit of choice, showcasing youthful energy and style for the big stage.</p>
+                <h3>DSDS Top 10 Kandidat</h3>
+                <div class="role">Aufstrebender Star</div>
+                <p>Die Mira Jacke & Mira Hose waren die Outfit-Wahl für die große Bühne – zeigt jugendliche Energie und Stil.</p>
                 <div class="btn-group">
-                    <a href="https://yvzdenim.com/products/mira-jacket?tag=Men" class="btn">Jacket</a>
-                    <a href="https://yvzdenim.com/products/mira?tag=Men" class="btn outline">Pants</a>
+                    <a href="https://yvzdenim.com/products/mira-jacket?tag=Men" class="btn">Jacke</a>
+                    <a href="https://yvzdenim.com/products/mira?tag=Men" class="btn outline">Hose</a>
                 </div>
             </div>
         </div>
@@ -255,12 +259,12 @@
         <!-- Card 5: Group Shot -->
         <div class="card">
             <div class="card-image">
-                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/group-shot.jpg" alt="Group of celebrities in YVZ Denim">
+                <img src="https://leonmuellerfijucha.github.io/yvz-denim-celebrity-page/images/group-shot.jpg" alt="Gruppe trägt YVZ Denim">
             </div>
             <div class="card-content">
                 <h3>Matze Knop, Isabella Luna & Mo Idrissou</h3>
-                <div class="role">The Power Trio</div>
-                <p>Together in the Mira Set. This shot captures the essence of YVZ Denim: versatile, modern, and effortlessly cool.</p>
+                <div class="role">Das Power-Trio</div>
+                <p>Gemeinsam im Mira Set zu sehen. Dieses Bild fängt die Essenz von YVZ Denim ein: vielseitig, modern und mühelos cool.</p>
                 <div class="btn-group">
                     <a href="https://yvzdenim.com/products/mira-set?tag=Men" class="btn">Mira Set ansehen</a>
                 </div>
@@ -270,7 +274,7 @@
 </main>
 
 <footer>
-    <p>© 2026 YVZ Denim. Visit us at <a href="https://yvzdenim.com">yvzdenim.com</a></p>
+    <p>© 2026 YVZ Denim. Besuchen Sie uns auf <a href="https://yvzdenim.com">yvzdenim.com</a></p>
 </footer>
 
 </body>
