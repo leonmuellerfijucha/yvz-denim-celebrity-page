@@ -18,23 +18,61 @@
         
         header { 
             text-align: center; 
-            padding: 80px 20px 60px; 
+            padding: 60px 20px 50px; 
             background: #fff; 
         }
         
-        header h1 { 
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-star {
+            width: 40px;
+            height: 40px;
+            position: relative;
+        }
+        
+        .logo-star::before {
+            content: '★';
+            font-size: 42px;
+            color: #1a1a1a;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+        
+        .logo-text {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2.8rem; 
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 8px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+        }
+        
+        .logo-text span {
+            letter-spacing: 4px;
+        }
+        
+        header h2 { 
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem; 
             font-weight: 400; 
             letter-spacing: 6px; 
             text-transform: uppercase; 
             margin-bottom: 15px;
+            color: #1a1a1a;
         }
         
         header .divider {
             width: 60px;
             height: 1px;
-            background: #1a1a1a;
+            background: #c9a96e;
             margin: 0 auto 20px;
         }
         
@@ -42,7 +80,10 @@
             color: #666; 
             font-size: 1rem; 
             font-weight: 300;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
         
         .container {
@@ -125,34 +166,47 @@
         
         .btn { 
             display: inline-block; 
-            padding: 12px 24px; 
-            background: #2980b9; 
-            color: #fff; 
+            padding: 14px 28px; 
+            background: transparent; 
+            color: #c9a96e; 
             text-decoration: none; 
             font-size: 0.85rem; 
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 500;
             transition: all 0.3s ease;
-            border: none;
-            border-radius: 25px;
+            border: 1px solid #c9a96e;
+            border-radius: 30px;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #c9a96e;
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+        
+        .btn:hover::before {
+            left: 0;
         }
         
         .btn:hover { 
-            background: #3498db; 
-            transform: translateY(-2px);
-        }
-        
-        .btn.outline {
-            background: transparent;
-            color: #2980b9;
-            border: 1px solid #2980b9;
-        }
-        
-        .btn.outline:hover {
-            background: #2980b9;
             color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(201, 169, 110, 0.3);
+        }
+        
+        .btn span {
+            position: relative;
+            z-index: 1;
         }
         
         footer { 
@@ -165,19 +219,20 @@
         }
         
         footer a { 
-            color: #fff; 
+            color: #c9a96e; 
             text-decoration: none; 
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid #333;
             padding-bottom: 2px;
             transition: border-color 0.3s;
         }
         
         footer a:hover {
-            border-color: #fff;
+            border-color: #c9a96e;
         }
         
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; letter-spacing: 4px; }
+            .logo-text { font-size: 1.6rem; letter-spacing: 4px; }
+            header h2 { font-size: 1rem; }
             .container { padding: 40px 20px; }
             .grid { gap: 30px; }
             .card img { height: 350px; }
@@ -187,9 +242,13 @@
 <body>
 
 <header>
-    <h1>YVZ Denim</h1>
+    <div class="logo">
+        <div class="logo-star"></div>
+        <div class="logo-text"><span>YV</span> Z <span>DENIM</span></div>
+    </div>
+    <h2>Wie gesehen an</h2>
     <div class="divider"></div>
-    <p>Wie gesehen an – Unsere Prominenten-Kollektion</p>
+    <p>Entdecken Sie, wie prominente Persönlichkeiten den zeitlosen Stil von YVZ Denim interpretieren. Von der Bühne bis zum roten Teppich – unsere Premium-Denims begleiten Stars durch ihren Alltag.</p>
 </header>
 
 <main class="container">
@@ -204,7 +263,7 @@
                 <div class="role">Grammy-prämierter R&B-Künstler</div>
                 <p>Während seiner Tour in dem eleganten Mira Blazer zu sehen – YVZ Denim passt perfekt auf der Bühne und darüber hinaus.</p>
                 <div class="btn-group">
-                    <a href="https://yvzdenim.com/products/mira-blazer?tag=" class="btn">Mira Blazer ansehen</a>
+                    <a href="https://yvzdenim.com/products/mira-blazer?tag=" class="btn"><span>Mira Blazer ansehen</span></a>
                 </div>
             </div>
         </div>
@@ -219,7 +278,7 @@
                 <div class="role">Sängerin & Fernsehpersönlichkeit</div>
                 <p>In unserem Trenchcoat Orion Brown zu sehen. Sarah zeigt, wie man Eleganz mit dem robusten Charme von Premium-Denim verbindet.</p>
                 <div class="btn-group">
-                    <a href="https://yvzdenim.com/products/trenchcoat-orion-brown?tag=Women" class="btn">Trenchcoat Orion Brown</a>
+                    <a href="https://yvzdenim.com/products/trenchcoat-orion-brown?tag=Women" class="btn"><span>Trenchcoat Orion Brown</span></a>
                 </div>
             </div>
         </div>
@@ -234,8 +293,8 @@
                 <div class="role">Komiker & Schauspieler</div>
                 <p>Matze trägt die Cassiopeia Jacke & Hose. Ein Look, der nahtlos vom TV-Set zu einem Abend in Berlin wechselt.</p>
                 <div class="btn-group">
-                    <a href="https://yvzdenim.com/products/cassiopeia-jacket-blue?tag=Men" class="btn">Jacke</a>
-                    <a href="https://yvzdenim.com/products/cassiopeia-pants-blue?tag=Men" class="btn outline">Hose</a>
+                    <a href="https://yvzdenim.com/products/cassiopeia-jacket-blue?tag=Men" class="btn"><span>Jacke</span></a>
+                    <a href="https://yvzdenim.com/products/cassiopeia-pants-blue?tag=Men" class="btn"><span>Hose</span></a>
                 </div>
             </div>
         </div>
@@ -250,8 +309,8 @@
                 <div class="role">Aufstrebender Star</div>
                 <p>Die Mira Jacke & Mira Hose waren die Outfit-Wahl für die große Bühne – zeigt jugendliche Energie und Stil.</p>
                 <div class="btn-group">
-                    <a href="https://yvzdenim.com/products/mira-jacket?tag=Men" class="btn">Jacke</a>
-                    <a href="https://yvzdenim.com/products/mira?tag=Men" class="btn outline">Hose</a>
+                    <a href="https://yvzdenim.com/products/mira-jacket?tag=Men" class="btn"><span>Jacke</span></a>
+                    <a href="https://yvzdenim.com/products/mira?tag=Men" class="btn"><span>Hose</span></a>
                 </div>
             </div>
         </div>
@@ -266,7 +325,7 @@
                 <div class="role">Das Power-Trio</div>
                 <p>Gemeinsam im Mira Set zu sehen. Dieses Bild fängt die Essenz von YVZ Denim ein: vielseitig, modern und mühelos cool.</p>
                 <div class="btn-group">
-                    <a href="https://yvzdenim.com/products/mira-set?tag=Men" class="btn">Mira Set ansehen</a>
+                    <a href="https://yvzdenim.com/products/mira-set?tag=Men" class="btn"><span>Mira Set ansehen</span></a>
                 </div>
             </div>
         </div>
