@@ -76,10 +76,14 @@
         }
         
         .card { 
+            position: relative;
+            display: flex;
+            flex-direction: column;
             background: #fff; 
             overflow: hidden; 
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 520px;
         }
         
         .card:hover { 
@@ -88,9 +92,10 @@
         }
         
         .card-image {
-            aspect-ratio: 4 / 3;
-            overflow: hidden;
-            position: relative;
+            height: 320px;
+            width: 100%;
+            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
         }
 
         .card-image a {
@@ -105,16 +110,26 @@
             object-fit: cover;
             object-position: center top;
             display: block;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
         }
         
-        .card:hover img {
-            transform: scale(1.05);
+        .card:hover .card img {
+            transform: scale(1.1);
         }
         
         .card-content { 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
             padding: 30px 25px 35px; 
             text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover .card-content {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
         }
         
         .card-content h3 { 
@@ -123,6 +138,16 @@
             font-weight: 500;
             margin-bottom: 8px; 
             letter-spacing: 0.5px;
+            transition: color 0.4s ease;
+        }
+
+        .card:hover .card-content h3,
+        .card:hover .card-content .btn {
+            color: #fff !important;
+        }
+
+        .card:hover .card-content .btn {
+            border-color: #fff !important;
         }
         
         .card-content .role { 
@@ -132,6 +157,13 @@
             text-transform: uppercase; 
             letter-spacing: 2px; 
             font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-content .role {
+            opacity: 0;
+            max-height: 0;
+            margin: 0;
         }
         
         .card-content p { 
@@ -140,6 +172,15 @@
             color: #555;
             margin-bottom: 25px; 
             font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-content p {
+            opacity: 0;
+            transform: translateY(10px);
+            max-height: 0;
+            margin: 0;
+            pointer-events: none;
         }
         
         .btn-group {
