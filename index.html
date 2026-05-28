@@ -165,15 +165,15 @@
             bottom: 95px; 
             left: 50%;
             transform: translateX(-50%);
-            color: #fff;
-            opacity: 1;
-            border: 1px solid #c9a96e;
+            color: rgba(255, 255, 255, 0.6); /* Semi-transparent white text for watermark look */
+            opacity: 0.8;
+            border: 1px solid rgba(201, 169, 110, 0.3); /* Subtle gold border */
             padding: 6px 18px;
             border-radius: 30px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(201, 169, 110, 0.4);
+            text-shadow: 0 0 15px rgba(201, 169, 110, 0.2); /* Very soft gold glow */
             margin: 0;
-            white-space: normal; /* Allowed line breaks for long names */
-            width: 90%; /* Ensure it stays within card bounds and stays centered */
+            white-space: normal; 
+            width: 90%; 
             pointer-events: none;
         }
 
@@ -219,7 +219,7 @@
             gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: auto; /* Guaranteed bottom position in flex containers */
+            margin-top: auto; 
         }
         
         .btn { 
