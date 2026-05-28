@@ -34,6 +34,8 @@
             max-width: 220px;
             height: auto;
             display: inline-block;
+                    height: auto;
+            max-width: 220px;
         }
         
         header h2 { 
@@ -48,7 +50,7 @@
         
         header .divider {
             width: 60px;
-            height: 580px;
+            height: auto;
             background: #c9a96e;
             margin: 0 auto 20px;
         }
@@ -91,14 +93,14 @@
             /* Cache Buster v3 */
             position: relative;
             overflow: hidden;
-            height: 580px;
+            height: 650px;
         }
         
         .card img { 
             width: 100%; 
             height: auto; 
             aspect-ratio: auto; 
-            object-fit: contain; 
+            object-fit: cover; 
             display: block; 
             transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
@@ -211,7 +213,9 @@
         }
         
         @media (max-width: 768px) {
-            .logo-img { max-width: 160px; }
+            .logo-img { max-width: 160px;             height: auto;
+            max-width: 220px;
+        }
             header h2 { font-size: 1rem; letter-spacing: 4px; }
             header p { font-size: 0.9rem; }
             .container { padding: 40px 20px; }
@@ -225,7 +229,7 @@
 <header>
     <div class="header-logo">
         <!-- TwicPics mit korrekter Syntax (max= statt width:) -->
-        <img data-twic-src="image:sb/logo.png?v=2?v=3" data-twic-transform="*/quality=90" src="https://yvzdenim.twic.pics/sb/logo.png?v=2?v=3" width="220" height="80" alt="YVZ Denim Logo" class="logo-img">
+        <img data-twic-src="image:sb/logo.png?v=4" data-twic-transform="*/quality=90" src="https://yvzdenim.twic.pics/sb/logo.png?v=4" width="220" height="80" alt="YVZ Denim Logo" class="logo-img">
     </div>
     <h2>Celebrity Fittings</h2>
     <div class="divider"></div>
@@ -238,7 +242,7 @@
         <div class="card">
             <div class="card-image">
                 <a href="https://yvzdenim.com/products/mira-blazer?tag=">
-                    <img data-twic-src="image:sb/neyo.jpg?v=2?v=3" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/neyo.jpg?v=2?v=3" width="400" alt="NE-YO trägt YVZ Denim" loading="eager">
+                    <img data-twic-src="image:sb/neyo.jpg?v=4" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/neyo.jpg?v=4" width="400" alt="NE-YO trägt YVZ Denim" loading="eager">
                 </a>
             </div>
             <div class="card-content">
@@ -256,7 +260,7 @@
         <div class="card">
             <div class="card-image">
                 <a href="https://yvzdenim.com/products/moon-blazer?tag=">
-                    <img data-twic-src="image:sb/akon.JPG?v=2?v=3" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/akon.JPG?v=2?v=3" width="400" alt="Akon trägt YVZ Denim" loading="eager">
+                    <img data-twic-src="image:sb/akon.JPG?v=4" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/akon.JPG?v=4" width="400" alt="Akon trägt YVZ Denim" loading="eager">
                 </a>
             </div>
             <div class="card-content">
@@ -273,7 +277,7 @@
         <div class="card">
             <div class="card-image">
                 <a href="https://yvzdenim.com/products/moon-jacket?tag=Men">
-                    <img data-twic-src="image:sb/ludacris.jpeg?v=2?v=3" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/ludacris.jpeg?v=2?v=3" width="400" alt="Ludacris trägt YVZ Denim" loading="eager">
+                    <img data-twic-src="image:sb/ludacris.jpeg?v=4" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/ludacris.jpeg?v=4" width="400" alt="Ludacris trägt YVZ Denim" loading="eager">
                 </a>
             </div>
             <div class="card-content">
@@ -291,7 +295,7 @@
         <div class="card">
             <div class="card-image">
                 <a href="https://yvzdenim.com/products/trenchcoat-orion-brown?tag=Women">
-                    <img data-twic-src="image:sb/sarah-engels.jpg?v=2?v=3" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/sarah-engels.jpg?v=2?v=3" width="400" alt="Sarah Engels trägt YVZ Denim" loading="eager">
+                    <img data-twic-src="image:sb/sarah-engels.jpg?v=4" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/sarah-engels.jpg?v=4" width="400" alt="Sarah Engels trägt YVZ Denim" loading="eager">
                 </a>
             </div>
             <div class="card-content">
@@ -309,7 +313,7 @@
         <div class="card">
             <div class="card-image">
                 <a href="https://yvzdenim.com/products/cassiopeia-jacket-blue?tag=Men">
-                    <img data-twic-src="image:sb/matze-knop.jpg?v=2?v=3" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/matze-knop.jpg?v=2?v=3" width="400" alt="Matze Knop trägt YVZ Denim">
+                    <img data-twic-src="image:sb/matze-knop.jpg?v=4" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/matze-knop.jpg?v=4" width="400" alt="Matze Knop trägt YVZ Denim">
                 </a>
             </div>
             <div class="card-content">
@@ -327,7 +331,7 @@
         <div class="card">
             <div class="card-image">
                 <a href="https://yvzdenim.com/products/mira-jacket?tag=Men">
-                    <img data-twic-src="image:sb/dsds-candidate.jpg?v=2?v=3" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/dsds-candidate.jpg?v=2?v=3" width="400" alt="DSDS Kandidat trägt YVZ Denim">
+                    <img data-twic-src="image:sb/dsds-candidate.jpg?v=4" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/dsds-candidate.jpg?v=4" width="400" alt="DSDS Kandidat trägt YVZ Denim">
                 </a>
             </div>
             <div class="card-content">
@@ -345,7 +349,7 @@
         <div class="card">
             <div class="card-image">
                 <a href="https://yvzdenim.com/products/mira-set?tag=Men">
-                    <img data-twic-src="image:sb/group-shot.jpg?v=2?v=3" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/group-shot.jpg?v=2?v=3" width="400" alt="Gruppe trägt YVZ Denim">
+                    <img data-twic-src="image:sb/group-shot.jpg?v=4" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/group-shot.jpg?v=4" width="400" alt="Gruppe trägt YVZ Denim">
                 </a>
             </div>
             <div class="card-content">
