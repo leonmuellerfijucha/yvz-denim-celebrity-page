@@ -83,7 +83,7 @@
             overflow: hidden; 
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            height: 580px; /* Increased for better content breathing room */
+            height: 580px; 
         }
         
         .card:hover, .card.is-active { 
@@ -125,12 +125,14 @@
         }
         
         .card-content { 
-            position: relative; /* Normal state: part of the flex flow */
-            flex: 1; /* Fills the remaining 260px */
+            position: relative; 
+            flex: 1; 
             z-index: 2;
             padding: 20px 25px 30px; 
             text-align: center;
             transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover .card-content,
@@ -145,7 +147,7 @@
         }
 
         .card-content h3 {
-            position: relative; /* Normal state */
+            position: relative; 
             opacity: 1;
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.4rem; 
@@ -160,7 +162,7 @@
         .card:hover .card-content h3,
         .card.is-active .card-content h3 {
             position: absolute;
-            bottom: 95px; /* Floats ABOVE the buttons */
+            bottom: 95px; 
             left: 50%;
             transform: translateX(-50%);
             color: #fff;
@@ -170,12 +172,13 @@
             border-radius: 30px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(201, 169, 110, 0.4);
             margin: 0;
-            white-space: nowrap;
+            white-space: normal; /* Allowed line breaks for long names */
+            width: 90%; /* Ensure it stays within card bounds and stays centered */
             pointer-events: none;
         }
 
         .card-content .role { 
-            opacity: 1; /* Visible in normal state */
+            opacity: 1; 
             color: #888; 
             font-size: 0.75rem; 
             margin-bottom: 12px; 
@@ -216,7 +219,7 @@
             gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: auto; /* Pushes to the bottom of the 260px area */
+            margin-top: auto; /* Guaranteed bottom position in flex containers */
         }
         
         .btn { 
