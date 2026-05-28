@@ -96,6 +96,7 @@
             width: 100%;
             transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1;
+            overflow: hidden;
         }
 
         .card-image a {
@@ -113,7 +114,11 @@
             transition: transform 0.5s ease;
         }
         
-        .card:hover .card img {
+        .card:hover .card-image {
+            height: 520px;
+        }
+
+        .card:hover img {
             transform: scale(1.1);
         }
         
@@ -141,13 +146,8 @@
             transition: color 0.4s ease;
         }
 
-        .card:hover .card-content h3,
-        .card:hover .card-content .btn {
-            color: #fff !important;
-        }
-
-        .card:hover .card-content .btn {
-            border-color: #fff !important;
+        .card:hover .card-content h3 {
+            color: #fff;
         }
         
         .card-content .role { 
