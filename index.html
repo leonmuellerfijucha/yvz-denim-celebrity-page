@@ -86,7 +86,7 @@
             height: 520px;
         }
         
-        .card:hover { 
+        .card:hover, .card.is-active { 
             transform: translateY(-8px); 
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
@@ -114,12 +114,42 @@
             transition: transform 0.5s ease;
         }
         
-        .card:hover .card-image {
+        .card:hover .card-image,
+        .card.is-active .card-image {
             height: 520px;
         }
 
-        .card:hover img {
+        .card:hover img,
+        .card.is-active img {
             transform: scale(1.1);
+        }
+        
+        /* Floating Name - Now a direct child of .card */
+        .card h3 {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem; 
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #fff;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 0;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .card:hover h3,
+        .card.is-active h3 {
+            opacity: 1;
+            border: 1px solid #c9a96e;
+            padding: 6px 18px;
+            border-radius: 30px; /* Rounded corners as requested */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(201, 169, 110, 0.4);
         }
         
         .card-content { 
@@ -133,31 +163,9 @@
             transition: all 0.4s ease;
         }
 
-        .card:hover .card-content {
+        .card:hover .card-content,
+        .card.is-active .card-content {
             background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
-        }
-        
-        .card-content h3 { 
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.5rem; 
-            font-weight: 500;
-            margin-bottom: 8px; 
-            letter-spacing: 0.5px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .card:hover .card-content h3 {
-            position: absolute;
-            top: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            border: 1px solid #c9a96e;
-            padding: 6px 18px;
-            border-radius: 4px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(201, 169, 110, 0.4);
-            margin: 0;
         }
         
         .card-content .role { 
@@ -170,7 +178,8 @@
             transition: all 0.3s ease;
         }
 
-        .card:hover .card-content .role {
+        .card:hover .card-content .role,
+        .card.is-active .card-content .role {
             opacity: 0;
             max-height: 0;
             margin: 0;
@@ -185,7 +194,8 @@
             transition: all 0.3s ease;
         }
 
-        .card:hover .card-content p {
+        .card:hover .card-content p,
+        .card.is-active .card-content p {
             opacity: 0;
             transform: translateY(10px);
             max-height: 0;
@@ -301,8 +311,8 @@
                     <img data-twic-src="image:sb/neyo.jpg?v=7" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/neyo.jpg?v=7" width="400" alt="NE-YO trägt YVZ Denim" loading="eager">
                 </a>
             </div>
+            <h3>NE-YO</h3>
             <div class="card-content">
-                <h3>NE-YO</h3>
                 <div class="role">Grammy-prämierter R&B-Künstler</div>
                 <p>Während seiner Tour in dem eleganten Mira Blazer zu sehen – YVZ Denim passt perfekt auf der Bühne und darüber hinaus.</p>
                 <div class="btn-group">
@@ -318,8 +328,8 @@
                     <img data-twic-src="image:sb/akon.JPG?v=7" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/akon.JPG?v=7" width="400" alt="Akon trägt YVZ Denim" loading="eager">
                 </a>
             </div>
+            <h3>Akon</h3>
             <div class="card-content">
-                <h3>Akon</h3>
                 <div class="role">R&B-Star & Philanthrop</div>
                 <p>Akon setzt mit dem Moon Blazer neue Maßstäbe – eine perfekte Mischung aus zeitlosem Stil und modernem Auftritt.</p>
                 <div class="btn-group">
@@ -335,8 +345,8 @@
                     <img data-twic-src="image:sb/ludacris.jpeg?v=7" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/ludacris.jpeg?v=7" width="400" alt="Ludacris trägt YVZ Denim" loading="eager">
                 </a>
             </div>
+            <h3>Ludacris</h3>
             <div class="card-content">
-                <h3>Ludacris</h3>
                 <div class="role">Rapper & Schauspieler</div>
                 <p>Ludacris kombiniert die Moon Jacke mit der Moon Hose – ein kraftvoller Look für die Bühne und darüber hinaus.</p>
                 <div class="btn-group">
@@ -353,8 +363,8 @@
                     <img data-twic-src="image:sb/sarah-engels.jpg?v=7" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/sarah-engels.jpg?v=7" width="400" alt="Sarah Engels trägt YVZ Denim" loading="eager">
                 </a>
             </div>
+            <h3>Sarah Engels</h3>
             <div class="card-content">
-                <h3>Sarah Engels</h3>
                 <div class="role">Sängerin & Fernsehpersönlichkeit</div>
                 <p>In unserem Trenchcoat Orion Brown zu sehen. Sarah zeigt, wie man Eleganz mit dem robusten Charme von Premium-Denim verbindet.</p>
                 <div class="btn-group">
@@ -371,8 +381,8 @@
                     <img data-twic-src="image:sb/matze-knop.jpg?v=7" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/matze-knop.jpg?v=7" width="400" alt="Matze Knop trägt YVZ Denim">
                 </a>
             </div>
+            <h3>Matze Knop</h3>
             <div class="card-content">
-                <h3>Matze Knop</h3>
                 <div class="role">Komiker & Schauspieler</div>
                 <p>Matze trägt die Cassiopeia Jacke & Hose. Ein Look, der nahtlos vom TV-Set zu einem Abend in Berlin wechselt.</p>
                 <div class="btn-group">
@@ -389,8 +399,8 @@
                     <img data-twic-src="image:sb/isaac-mik.jpg?v=7" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/isaac-mik.jpg?v=7" width="400" alt="Isaac M.I.K. trägt YVZ Denim" loading="eager">
                 </a>
             </div>
+            <h3>Isaac M.I.K.</h3>
             <div class="card-content">
-                <h3>Isaac M.I.K.</h3>
                 <div class="role">Tänzer und Choreograph</div>
                 <p>Isaac kombiniert die Moon Jacke mit der Moon Hose – ein kraftvoller, dynamischer Look für die Bühne und darüber hinaus.</p>
                 <div class="btn-group">
@@ -407,8 +417,8 @@
                     <img data-twic-src="image:sb/dsds-candidate.jpg?v=7" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/dsds-candidate.jpg?v=7" width="400" alt="DSDS Kandidat trägt YVZ Denim">
                 </a>
             </div>
+            <h3>DSDS Top 10 Kandidat</h3>
             <div class="card-content">
-                <h3>DSDS Top 10 Kandidat</h3>
                 <div class="role">aufstrebender Star</div>
                 <p>Die Mira Jacke & Mira Hose waren die Outfit-Wahl für die große Bühne – zeigt jugendliche Energie und Stil.</p>
                 <div class="btn-group">
@@ -425,8 +435,8 @@
                     <img data-twic-src="image:sb/group-shot.jpg?v=7" data-twic-transform="*/quality=88/focus=auto" src="https://yvzdenim.twic.pics/sb/group-shot.jpg?v=7" width="400" alt="Gruppe trägt YVZ Denim">
                 </a>
             </div>
+            <h3>Matze Knop, Isabella Luna & Mo Idrissou</h3>
             <div class="card-content">
-                <h3>Matze Knop, Isabella Luna & Mo Idrissou</h3>
                 <div class="role">Das Power-Trio</div>
                 <p>Gemeinsam im Mira Set zu sehen. Dieses Bild fängt die Essenz von YVZ Denim ein: vielseitig, modern und mühelos cool.</p>
                 <div class="btn-group">
@@ -440,6 +450,23 @@
 <footer>
     <p>© 2026 YVZ Denim. Besuchen Sie uns auf <a href="https://yvzdenim.com">yvzdenim.com</a></p>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            const imgLink = card.querySelector('.card-image a');
+            if (imgLink) {
+                imgLink.addEventListener('click', (e) => {
+                    if (!card.classList.contains('is-active')) {
+                        e.preventDefault();
+                        card.classList.add('is-active');
+                    }
+                });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
