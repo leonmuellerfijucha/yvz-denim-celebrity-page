@@ -121,12 +121,15 @@
 
         .card:hover img,
         .card.is-active img {
-            transform: scale(1.075); /* Slightly more zoom as requested */
+            transform: scale(1.075); /* Adjusted zoom */
         }
         
         .card-content { 
-            position: relative; 
-            flex: 1; 
+            position: absolute; /* Always absolute to prevent layout flicker */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 260px; /* Normal height for the bottom area */
             z-index: 2;
             padding: 20px 25px 30px; 
             text-align: center;
@@ -137,14 +140,9 @@
 
         .card:hover .card-content,
         .card.is-active .card-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            height: 100%; /* Expands upwards on hover */
             background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
             padding: 30px 25px;
-            pointer-events: none; /* Allows clicks to pass through to the image link below */
         }
 
         .card-content h3 {
@@ -158,7 +156,6 @@
             margin: 0 0 5px 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 3;
-            pointer-events: auto; /* Re-enable interaction for the name */
         }
 
         .card:hover .card-content h3,
@@ -176,7 +173,7 @@
             margin: 0;
             white-space: normal; 
             width: 90%; 
-            pointer-events: auto; /* Re-enable interaction for the name */
+            pointer-events: none;
         }
 
         .card-content .role { 
@@ -188,7 +185,6 @@
             letter-spacing: 1.5px; 
             font-weight: 500;
             transition: all 0.3s ease;
-            pointer-events: auto; /* Re-enable interaction for the role */
         }
 
         .card:hover .card-content .role,
@@ -206,7 +202,6 @@
             font-weight: 300;
             opacity: 1;
             transition: all 0.3s ease;
-            pointer-events: auto; /* Re-enable interaction for the description */
         }
 
         .card:hover .card-content p,
@@ -224,13 +219,12 @@
             flex-wrap: wrap;
             justify-content: center;
             margin-top: auto; 
-            pointer-events: auto; /* Re-enable interaction for the buttons */
         }
         
         .btn { 
             display: inline-block; 
             padding: 12px 24px; 
-            background: #fff; 
+            background: #f9f3e8; /* Light golden background */
             color: #c9a96e; 
             text-decoration: none; 
             font-size: 0.8rem; 
@@ -252,7 +246,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: #c9a96e;
+            background: #c9a96e; /* Richer gold on hover */
             transition: left 0.3s ease;
             z-index: 0;
         }
@@ -491,12 +485,12 @@
             const imgLink = card.querySelector('.card-image a');
             if (imgLink) {
                 imgLink.addEventListener('click', (e) => {
-                    // Only prevent default and toggle .is-active on touch devices (mobile)
-                    // This allows mouse users on desktop to click through to the product link directly
-                    if (isTouch && !card.classList.contains('is-active')) {
+                    // On touch devices, we want the "tap-to-hover" behavior
+                    if (isTouchDevice && !card.classList.contains('is-active')) {
                         e.preventDefault();
                         card.classList.add('is-active');
                     }
+                    // On desktop, we let the link work normally
                 });
             }
         });
