@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Fittings | YVZ Denim</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: #f8f8f8; 
+            color: #1a1a1a; 
+            line-height: 1.6;
+        }
+        
+        header { 
+            text-align: center; 
+            padding: 60px 20px 50px; 
+            background: #fff; 
+        }
+        
+        .header-logo { margin-bottom: 30px; }
+
+        .logo-img {
+            max-width: 220px;
+            height: auto;
+            display: inline-block;
+        }
+        
+        header h2 { 
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem; 
+            font-weight: 400; 
+            letter-spacing: 6px; 
+            text-transform: uppercase; 
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        header .divider {
+            width: 60px;
+            height: 1px;
+            background: #c9a96e;
+            margin: 0 auto 20px;
+        }
+        
+        header p { 
+            color: #555; 
+            font-size: 1rem; 
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 40px; 
+        }
+        
+        .card { 
+            background: #fff; 
+            overflow: hidden; 
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .card-image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card img { 
+            width: 100%; 
+            height: 450px; 
+            object-fit: cover; 
+            display: block; 
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .card-content { 
+            padding: 30px 25px 35px; 
+            text-align: center;
+        }
+        
+        .card-content h3 { 
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem; 
+            font-weight: 500;
+            margin-bottom: 8px; 
+            letter-spacing: 0.5px;
+        }
+        
+        .card-content .role { 
+            color: #999; 
+            font-size: 0.8rem; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-weight: 400;
+        }
+        
+        .card-content p { 
+            line-height: 1.7; 
+            font-size: 0.95rem; 
+            color: #555;
+            margin-bottom: 25px; 
+            font-weight: 300;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn { 
+            display: inline-block; 
+            padding: 14px 28px; 
+            background: #fff; 
+            color: #c9a96e; 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #c9a96e;
+            border-radius: 30px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #c9a96e;
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+        
+        .btn:hover::before {
+            left: 0;
+        }
+        
+        .btn:hover { 
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(201, 169, 110, 0.3);
+        }
+        
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        footer { 
+            text-align: center; 
+            padding: 60px 20px; 
+            background: #1a1a1a; 
+            color: #888; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+        }
+        
+        footer a { 
+            color: #c9a96e; 
+            text-decoration: none; 
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+        
+        footer a:hover {
+            border-color: #c9a96e;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-img { max-width: 160px; }
+            header h2 { font-size: 1rem; letter-spacing: 4px; }
+            header p { font-size: 0.9rem; }
+            .container { padding: 40px 20px; }
+            .grid { gap: 30px; }
+            .card img { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-logo">
+        <!-- TwicPics mit korrekter Syntax (max= statt width:) -->
+        <img src="https://yvzdenim.twic.pics/sb/logo.png?twic=v1/max=220/quality=90/output=png" alt="YVZ Denim Logo" class="logo-img">
+    </div>
+    <h2>Celebrity Fittings</h2>
+    <div class="divider"></div>
+    <p>YVZ Denim steht für zeitlosen Stil und Premium-Qualität. Entdecken Sie, wie prominente Persönlichkeiten unsere Denims interpretieren – von der Bühne bis zum roten Teppich, authentisch und stilbewusst.</p>
+</header>
+
+<main class="container">
+    <div class="grid">
+        <!-- Card 1: NE-YO -->
+        <div class="card">
+            <div class="card-image">
+                <a href="https://yvzdenim.com/products/mira-blazer?tag=">
+                    <img src="https://yvzdenim.twic.pics/sb/neyo.jpg?twic=v1/max=800/quality=88/focus=auto/output=jpeg" alt="NE-YO trägt YVZ Denim" loading="eager">
+                </a>
+            </div>
+            <div class="card-content">
+                <h3>NE-YO</h3>
+                <div class="role">Grammy-prämierter R&B-Künstler</div>
+                <p>Während seiner Tour in dem eleganten Mira Blazer zu sehen – YVZ Denim passt perfekt auf der Bühne und darüber hinaus.</p>
+                <div class="btn-group">
+                    <a href="https://yvzdenim.com/products/mira-blazer?tag=" class="btn"><span>Mira Blazer ansehen</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Sarah Engels -->
+        <div class="card">
+            <div class="card-image">
+                <a href="https://yvzdenim.com/products/trenchcoat-orion-brown?tag=Women">
+                    <img src="https://yvzdenim.twic.pics/sb/sarah-engels.jpg?twic=v1/max=800/quality=88/focus=auto/output=jpeg" alt="Sarah Engels trägt YVZ Denim" loading="eager">
+                </a>
+            </div>
+            <div class="card-content">
+                <h3>Sarah Engels</h3>
+                <div class="role">Sängerin & Fernsehpersönlichkeit</div>
+                <p>In unserem Trenchcoat Orion Brown zu sehen. Sarah zeigt, wie man Eleganz mit dem robusten Charme von Premium-Denim verbindet.</p>
+                <div class="btn-group">
+                    <a href="https://yvzdenim.com/products/trenchcoat-orion-brown?tag=Women" class="btn"><span>Trenchcoat</span></a>
+                    <a href="https://yvzdenim.com/products/cropped-tank-top-white?tag=" class="btn"><span>Tank Top</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Matze Knop -->
+        <div class="card">
+            <div class="card-image">
+                <a href="https://yvzdenim.com/products/cassiopeia-jacket-blue?tag=Men">
+                    <img src="https://yvzdenim.twic.pics/sb/matze-knop.jpg?twic=v1/max=800/quality=88/focus=auto/output=jpeg" alt="Matze Knop trägt YVZ Denim">
+                </a>
+            </div>
+            <div class="card-content">
+                <h3>Matze Knop</h3>
+                <div class="role">Komiker & Schauspieler</div>
+                <p>Matze trägt die Cassiopeia Jacke & Hose. Ein Look, der nahtlos vom TV-Set zu einem Abend in Berlin wechselt.</p>
+                <div class="btn-group">
+                    <a href="https://yvzdenim.com/products/cassiopeia-jacket-blue?tag=Men" class="btn"><span>Jacke</span></a>
+                    <a href="https://yvzdenim.com/products/cassiopeia-pants-blue?tag=Men" class="btn"><span>Hose</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: DSDS Top 10 -->
+        <div class="card">
+            <div class="card-image">
+                <a href="https://yvzdenim.com/products/mira-jacket?tag=Men">
+                    <img src="https://yvzdenim.twic.pics/sb/dsds-candidate.jpg?twic=v1/max=800/quality=88/focus=auto/output=jpeg" alt="DSDS Kandidat trägt YVZ Denim">
+                </a>
+            </div>
+            <div class="card-content">
+                <h3>DSDS Top 10 Kandidat</h3>
+                <div class="role">aufstrebender Star</div>
+                <p>Die Mira Jacke & Mira Hose waren die Outfit-Wahl für die große Bühne – zeigt jugendliche Energie und Stil.</p>
+                <div class="btn-group">
+                    <a href="https://yvzdenim.com/products/mira-jacket?tag=Men" class="btn"><span>Jacke</span></a>
+                    <a href="https://yvzdenim.com/products/mira?tag=Men" class="btn"><span>Hose</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Group Shot -->
+        <div class="card">
+            <div class="card-image">
+                <a href="https://yvzdenim.com/products/mira-set?tag=Men">
+                    <img src="https://yvzdenim.twic.pics/sb/group-shot.jpg?twic=v1/max=800/quality=88/focus=auto/output=jpeg" alt="Gruppe trägt YVZ Denim">
+                </a>
+            </div>
+            <div class="card-content">
+                <h3>Matze Knop, Isabella Luna & Mo Idrissou</h3>
+                <div class="role">Das Power-Trio</div>
+                <p>Gemeinsam im Mira Set zu sehen. Dieses Bild fängt die Essenz von YVZ Denim ein: vielseitig, modern und mühelos cool.</p>
+                <div class="btn-group">
+                    <a href="https://yvzdenim.com/products/mira-set?tag=Men" class="btn"><span>Mira Set ansehen</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 YVZ Denim. Besuchen Sie uns auf <a href="https://yvzdenim.com">yvzdenim.com</a></p>
+</footer>
+
+</body>
+</html>
