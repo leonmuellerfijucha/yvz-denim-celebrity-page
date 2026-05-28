@@ -121,11 +121,11 @@
 
         .card:hover img,
         .card.is-active img {
-            transform: scale(1.075); /* Adjusted zoom */
+            transform: scale(1.075); 
         }
         
         .card-content { 
-            position: absolute; /* Always absolute to prevent layout flicker */
+            position: absolute; 
             bottom: 0;
             left: 0;
             width: 100%;
@@ -141,38 +141,36 @@
         .card:hover .card-content,
         .card.is-active .card-content {
             height: 100%; /* Expands upwards on hover */
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
             padding: 30px 25px;
         }
 
         .card-content h3 {
-            position: relative; 
+            position: absolute; /* Always absolute to prevent layout jump/flicker */
+            bottom: 35px; /* Position in normal state */
+            left: 50%;
+            transform: translateX(-50%);
             opacity: 1;
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.4rem; 
             font-weight: 500;
             letter-spacing: 0.5px;
             color: #1a1a1a;
-            margin: 0 0 5px 0;
+            margin: 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 3;
+            width: 90%;
+            white-space: normal;
         }
 
         .card:hover .card-content h3,
         .card.is-active .card-content h3 {
-            position: absolute;
-            bottom: 95px; 
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.75); /* Middle ground transparency */
-            opacity: 1;
-            border: 1px solid rgba(201, 169, 110, 0.4); /* Middle ground gold border */
+            bottom: 95px; /* Slides up on hover */
+            color: rgba(255, 255, 255, 0.75); /* Watermark white */
+            border: 1px solid rgba(201, 169, 110, 0.4); /* Watermark gold */
             padding: 6px 18px;
             border-radius: 30px;
-            text-shadow: 0 0 10px rgba(201, 169, 110, 0.25); /* Refined glow */
-            margin: 0;
-            white-space: normal; 
-            width: 90%; 
+            text-shadow: 0 0 10px rgba(201, 169, 110, 0.25); 
             pointer-events: none;
         }
 
@@ -219,13 +217,14 @@
             flex-wrap: wrap;
             justify-content: center;
             margin-top: auto; 
+            z-index: 4;
         }
         
         .btn { 
             display: inline-block; 
             padding: 12px 24px; 
             background: #f9f3e8; /* Light golden background */
-            color: #c9a96e; 
+            color: #000; /* Black text in normal state */
             text-decoration: none; 
             font-size: 0.8rem; 
             letter-spacing: 1px;
@@ -256,7 +255,7 @@
         }
         
         .btn:hover { 
-            color: #fff;
+            color: #fff; /* White text on hover */
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(201, 169, 110, 0.3);
         }
