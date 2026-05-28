@@ -143,11 +143,21 @@
             font-weight: 500;
             margin-bottom: 8px; 
             letter-spacing: 0.5px;
-            transition: color 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         .card:hover .card-content h3 {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
             color: #fff;
+            border: 1px solid #c9a96e;
+            padding: 6px 18px;
+            border-radius: 4px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(201, 169, 110, 0.4);
+            margin: 0;
         }
         
         .card-content .role { 
