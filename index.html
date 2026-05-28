@@ -87,21 +87,28 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
-        p0px;
-        }
-        
         .card-image {
             aspect-ratio: 4 / 3;
             overflow: hidden;
             position: relative;
         }
+
+        .card-image a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
         .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center top;
             display: block;
+            transition: transform 0.4s ease;
         }
+        
+        .card:hover img {
             transform: scale(1.05);
         }
         
@@ -209,20 +216,17 @@
         }
         
         @media (max-width: 768px) {
-            V0px;             height: auto;
-            max-width: 220px;
-        }
             header h2 { font-size: 1rem; letter-spacing: 4px; }
             header p { font-size: 0.9rem; }
             .container { padding: 40px 20px; }
             .grid { gap: 30px; }
             .card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-        }
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                object-position: center top;
+                display: block;
+            }
         }
     </style>
 </head>
