@@ -305,43 +305,65 @@
             .container { padding: 40px 20px; }
             .grid { gap: 30px; }
 
-            /* Make image fill the whole card on mobile */
+            /* Image fills the whole card to maintain 9:16 look */
             .card-image {
                 height: 100%;
             }
 
-            /* Content as an overlay with gradient for readability */
+            /* Text block: solid white in non-hover state, overlay on hover */
             .card-content {
-                height: 100%;
-                justify-content: flex-end;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 300px; /* Solid box height like desktop */
+                background: #fff; /* Solid background hides the image underneath */
                 padding: 40px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
                 pointer-events: auto;
-                background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+                transition: all 0.4s ease;
+                z-index: 2;
             }
 
+            /* Reset h3 for mobile non-hover state */
             .card-content h3 {
                 position: relative;
                 bottom: 0;
                 left: 0;
                 transform: none;
                 width: 100%;
+                color: #1a1a1a;
                 margin-bottom: 10px;
+            }
+
+            .card-content .role { color: #888; }
+            .card-content p { color: #444; }
+
+            /* Hover/Active state: turn into full overlay */
+            .card:hover .card-content,
+            .card.is-active .card-content {
+                height: 100%;
+                background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+            }
+
+            /* Re-position h3 for hover effect */
+            .card:hover .card-content h3,
+            .card.is-active .card-content h3 {
+                position: absolute;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
                 color: #fff;
             }
 
-            .card-content .role {
-                color: rgba(255,255,255,0.8);
-                margin-bottom: 5px;
-            }
-
-            .card-content p {
-                color: rgba(255,255,255,0.9);
-                margin-bottom: 15px;
-            }
-
-            .card-content .btn-group {
-                margin-top: 0;
-            }
+            .card:hover .card-content .role,
+            .card.is-active .card-content .role { color: rgba(255,255,255,0.8); }
+            .card:hover .card-content p,
+            .card.is-active .card-content p { color: rgba(255,255,255,0.9); }
 
             .card img {
                 width: 100%;
