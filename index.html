@@ -121,7 +121,7 @@
 
         .card:hover img,
         .card.is-active img {
-            transform: scale(1.075); 
+            transform: scale(1.04); 
         }
         
         .card-content { 
@@ -136,12 +136,12 @@
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
+            pointer-events: none;
         }
 
         .card:hover .card-content,
         .card.is-active .card-content {
             height: 100%; 
-            background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
             padding: 30px 25px; 
         }
 
