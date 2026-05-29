@@ -131,7 +131,7 @@
             width: 100%;
             height: 260px; 
             z-index: 2;
-            padding: 20px 25px 30px; 
+            padding: 90px 25px 30px; /* Noch mehr Platz oben für den Namen */
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -142,12 +142,12 @@
         .card.is-active .card-content {
             height: 100%; 
             background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
-            padding: 30px 25px;
+            padding: 30px 25px; /* Normales Padding beim Hover, da Text eh verschwindet */
         }
 
         .card-content h3 {
             position: absolute; 
-            bottom: 150px; /* Higher position to avoid button overlap */
+            bottom: 230px; /* Noch weiter oben, damit der Text (role/p) darunter passt */
             left: 50%;
             transform: translateX(-50%);
             opacity: 1;
@@ -158,7 +158,7 @@
             color: #1a1a1a;
             margin: 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 5; /* Higher than buttons */
+            z-index: 5; /* Immer über dem Text */
             width: 90%;
             white-space: normal;
             pointer-events: none;
@@ -166,7 +166,7 @@
 
         .card:hover .card-content h3,
         .card.is-active .card-content h3 {
-            bottom: 95px; 
+            bottom: 95px; /* Beim Hover wandert der Name nach unten über die Buttons */
             color: rgba(255, 255, 255, 0.75); 
             border: 1px solid rgba(201, 169, 110, 0.4); 
             padding: 6px 18px;
@@ -227,7 +227,7 @@
             display: inline-block; 
             padding: 12px 24px; 
             background: #f9f3e8; 
-            color: #8a6d3b; /* Dark gold text */
+            color: #8a6d3b; 
             text-decoration: none; 
             font-size: 0.8rem; 
             letter-spacing: 1px;
