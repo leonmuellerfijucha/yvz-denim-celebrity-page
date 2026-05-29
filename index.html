@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="de"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html lang="de">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celebrity Fittings | YVZ Denim</title>
@@ -129,7 +129,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 260px; /* Normal height for the bottom area */
+            height: 260px; 
             z-index: 2;
             padding: 20px 25px 30px; 
             text-align: center;
@@ -140,14 +140,14 @@
 
         .card:hover .card-content,
         .card.is-active .card-content {
-            height: 100%; /* Expands upwards on hover */
+            height: 100%; 
             background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
             padding: 30px 25px;
         }
 
         .card-content h3 {
-            position: absolute; /* Always absolute to prevent layout jump/flicker */
-            bottom: 35px; /* Position in normal state */
+            position: absolute; 
+            bottom: 150px; /* Higher position to avoid button overlap */
             left: 50%;
             transform: translateX(-50%);
             opacity: 1;
@@ -158,19 +158,21 @@
             color: #1a1a1a;
             margin: 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 3;
+            z-index: 5; /* Higher than buttons */
             width: 90%;
             white-space: normal;
+            pointer-events: none;
         }
 
         .card:hover .card-content h3,
         .card.is-active .card-content h3 {
-            bottom: 95px; /* Slides up on hover */
-            color: rgba(255, 255, 255, 0.75); /* Watermark white */
-            border: 1px solid rgba(201, 169, 110, 0.4); /* Watermark gold */
+            bottom: 95px; 
+            color: rgba(255, 255, 255, 0.75); 
+            border: 1px solid rgba(201, 169, 110, 0.4); 
             padding: 6px 18px;
             border-radius: 30px;
             text-shadow: 0 0 10px rgba(201, 169, 110, 0.25); 
+            margin: 0;
             pointer-events: none;
         }
 
@@ -218,13 +220,14 @@
             justify-content: center;
             margin-top: auto; 
             z-index: 4;
+            pointer-events: auto;
         }
         
         .btn { 
             display: inline-block; 
             padding: 12px 24px; 
-            background: #f9f3e8; /* Light golden background */
-            color: #000; /* Black text in normal state */
+            background: #f9f3e8; 
+            color: #8a6d3b; /* Dark gold text */
             text-decoration: none; 
             font-size: 0.8rem; 
             letter-spacing: 1px;
@@ -245,7 +248,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: #c9a96e; /* Richer gold on hover */
+            background: #c9a96e; 
             transition: left 0.3s ease;
             z-index: 0;
         }
@@ -255,7 +258,7 @@
         }
         
         .btn:hover { 
-            color: #fff; /* White text on hover */
+            color: #fff; 
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(201, 169, 110, 0.3);
         }
@@ -465,7 +468,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.card');
         
-        // Observer to close active state when card scrolls out of view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) {
@@ -474,22 +476,18 @@
             });
         }, { threshold: 0.1 });
 
-        // Detect if the user is on a touch device
         const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
         cards.forEach(card => {
-            // Register card with observer
             observer.observe(card);
 
             const imgLink = card.querySelector('.card-image a');
             if (imgLink) {
                 imgLink.addEventListener('click', (e) => {
-                    // On touch devices, we want the "tap-to-hover" behavior
                     if (isTouchDevice && !card.classList.contains('is-active')) {
                         e.preventDefault();
                         card.classList.add('is-active');
                     }
-                    // On desktop, we let the link work normally
                 });
             }
         });
