@@ -92,7 +92,7 @@
         }
         
         .card-image {
-            height: 300px;
+            height: 420px;
             width: 100%;
             transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1;
@@ -129,9 +129,9 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 340px; 
+            height: 220px; 
             z-index: 2;
-            padding: 70px 25px 30px; /* Optimierter Abstand: Name und Text rücken näher zusammen */
+            padding: 55px 25px 20px; /* Kompakter Textbereich, Name hat Platz */
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -142,12 +142,12 @@
         .card.is-active .card-content {
             height: 100%; 
             background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
-            padding: 30px 25px; /* Normales Padding beim Hover, da Text eh verschwindet */
+            padding: 30px 25px; 
         }
 
         .card-content h3 {
             position: absolute; 
-            bottom: 260px; /* Perfekter Abstand: nicht zu nah am Bild, nicht zu weit vom Text */
+            bottom: 170px; /* Position im Textbereich (220px total) */
             left: 50%;
             transform: translateX(-50%);
             opacity: 1;
@@ -158,7 +158,7 @@
             color: #1a1a1a;
             margin: 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 5; /* Immer über dem Text */
+            z-index: 5; 
             width: 90%;
             white-space: normal;
             pointer-events: none;
@@ -166,7 +166,7 @@
 
         .card:hover .card-content h3,
         .card.is-active .card-content h3 {
-            bottom: 110px; /* Beim Hover wandert der Name nach unten über die Buttons */
+            bottom: 110px; 
             color: rgba(255, 255, 255, 0.75); 
             border: 1px solid rgba(201, 169, 110, 0.4); 
             padding: 6px 18px;
@@ -180,9 +180,9 @@
             opacity: 1; 
             color: #888; 
             font-size: 0.8rem; 
-            margin-bottom: 12px; 
+            margin-bottom: 8px; 
             text-transform: uppercase; 
-            letter-spacing: 2px; /* Luftiger, luxuriöser Look */
+            letter-spacing: 2px; 
             font-weight: 400;
             transition: all 0.3s ease;
         }
@@ -195,10 +195,10 @@
         }
         
         .card-content p { 
-            line-height: 1.6; /* Eleganterer Zeilenabstand */
-            font-size: 0.95rem; 
+            line-height: 1.5; 
+            font-size: 0.9rem; 
             color: #444;
-            margin-bottom: 15px; 
+            margin-bottom: 10px; 
             font-weight: 300;
             opacity: 1;
             transition: all 0.3s ease;
@@ -225,11 +225,11 @@
         
         .btn { 
             display: inline-block; 
-            padding: 12px 24px; 
+            padding: 10px 20px; 
             background: #f9f3e8; 
             color: #8a6d3b; 
             text-decoration: none; 
-            font-size: 0.8rem; 
+            font-size: 0.75rem; 
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 500;
