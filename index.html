@@ -131,7 +131,7 @@
             width: 100%;
             height: 260px; 
             z-index: 2;
-            padding: 90px 25px 30px; /* Noch mehr Platz oben für den Namen */
+            padding: 70px 25px 30px; /* Optimierter Abstand: Name und Text rücken näher zusammen */
             text-align: center;
             transition: all 0.4s ease;
             display: flex;
@@ -147,13 +147,13 @@
 
         .card-content h3 {
             position: absolute; 
-            bottom: 230px; /* Noch weiter oben, damit der Text (role/p) darunter passt */
+            bottom: 200px; /* Perfekter Abstand: nicht zu nah am Bild, nicht zu weit vom Text */
             left: 50%;
             transform: translateX(-50%);
             opacity: 1;
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.4rem; 
-            font-weight: 500;
+            font-size: 1.5rem; 
+            font-weight: 600;
             letter-spacing: 0.5px;
             color: #1a1a1a;
             margin: 0;
@@ -182,7 +182,7 @@
             font-size: 0.75rem; 
             margin-bottom: 12px; 
             text-transform: uppercase; 
-            letter-spacing: 1.5px; 
+            letter-spacing: 2px; /* Luftiger, luxuriöser Look */
             font-weight: 500;
             transition: all 0.3s ease;
         }
@@ -195,7 +195,7 @@
         }
         
         .card-content p { 
-            line-height: 1.5; 
+            line-height: 1.6; /* Eleganterer Zeilenabstand */
             font-size: 0.9rem; 
             color: #444;
             margin-bottom: 15px; 
