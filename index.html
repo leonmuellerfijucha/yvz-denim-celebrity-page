@@ -83,7 +83,7 @@
             overflow: hidden; 
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            height: 580px; 
+            height: 640px; 
         }
         
         .card:hover, .card.is-active { 
@@ -92,7 +92,7 @@
         }
         
         .card-image {
-            height: 320px;
+            height: 300px;
             width: 100%;
             transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1;
@@ -116,7 +116,7 @@
         
         .card:hover .card-image,
         .card.is-active .card-image {
-            height: 580px;
+            height: 640px;
         }
 
         .card:hover img,
@@ -129,7 +129,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 260px; 
+            height: 340px; 
             z-index: 2;
             padding: 70px 25px 30px; /* Optimierter Abstand: Name und Text rücken näher zusammen */
             text-align: center;
@@ -147,13 +147,13 @@
 
         .card-content h3 {
             position: absolute; 
-            bottom: 200px; /* Perfekter Abstand: nicht zu nah am Bild, nicht zu weit vom Text */
+            bottom: 260px; /* Perfekter Abstand: nicht zu nah am Bild, nicht zu weit vom Text */
             left: 50%;
             transform: translateX(-50%);
             opacity: 1;
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.5rem; 
-            font-weight: 500; /* Übernommen aus der Datei */
+            font-weight: 600;
             letter-spacing: 0.5px;
             color: #1a1a1a;
             margin: 0;
@@ -166,7 +166,7 @@
 
         .card:hover .card-content h3,
         .card.is-active .card-content h3 {
-            bottom: 95px; /* Beim Hover wandert der Name nach unten über die Buttons */
+            bottom: 110px; /* Beim Hover wandert der Name nach unten über die Buttons */
             color: rgba(255, 255, 255, 0.75); 
             border: 1px solid rgba(201, 169, 110, 0.4); 
             padding: 6px 18px;
@@ -179,11 +179,11 @@
         .card-content .role { 
             opacity: 1; 
             color: #888; 
-            font-size: 0.8rem; /* Übernommen aus der Datei */
+            font-size: 0.8rem; 
             margin-bottom: 12px; 
             text-transform: uppercase; 
             letter-spacing: 2px; /* Luftiger, luxuriöser Look */
-            font-weight: 400; /* Übernommen aus der Datei */
+            font-weight: 400;
             transition: all 0.3s ease;
         }
 
@@ -195,8 +195,8 @@
         }
         
         .card-content p { 
-            line-height: 1.7; /* Übernommen aus der Datei */
-            font-size: 0.95rem; /* Übernommen aus der Datei */
+            line-height: 1.6; /* Eleganterer Zeilenabstand */
+            font-size: 0.95rem; 
             color: #444;
             margin-bottom: 15px; 
             font-weight: 300;
